@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="calc" class="exam2.CountCalculator">
+		<property name="addCounter" ref="addCnt" />
+		<property name="minCounter" ref="minCnt" />
+		<property name="mulCounter" ref="mulCnt" />
+		<property name="divCounter" ref="divCnt" />
+	</bean>
+
+	<bean id="addCnt" class="exam2.Counter"></bean>
+	<bean id="minCnt" class="exam2.Counter"></bean>
+	<bean id="mulCnt" class="exam2.Counter"></bean>
+	<bean id="divCnt" class="exam2.Counter"></bean>
+</beans>
