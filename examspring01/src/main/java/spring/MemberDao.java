@@ -4,10 +4,9 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MemberDAO {
+public class MemberDao {
 	private static long nextId = 0;
-	
-	private Map<String, Member> db= new HashMap<>();
+	private Map<String, Member> db = new HashMap<>();
 	
 	//멤버 검색
 	public Member selectByEmail(String email) {
@@ -24,8 +23,16 @@ public class MemberDAO {
 	//멤버 수정
 	public void update(Member member) {
 		db.put(member.getEmail(), member);
-		
 	}
-	
-	
 }
+
+
+
+
+
+
+
+
+
+
+

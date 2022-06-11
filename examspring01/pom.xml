@@ -3,8 +3,10 @@
   <groupId>test</groupId>
   <artifactId>examspring01</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-    	<!-- 자주 사용할 속성 -->
+
+	<!-- 메이븐 설정 등록 -->
+
+	<!-- 자주 사용할 속성 -->
 	<properties>
 		<jdk-version>1.8</jdk-version>
 		<springframework-version>5.0.2.RELEASE</springframework-version>
@@ -12,18 +14,20 @@
 
 	<!-- 의존 라이브러리 등록 -->
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${springframework-version}</version>
 		</dependency>
+
 	</dependencies>
 
 	<!-- 메이븐 빌드 관련 설정 -->
 	<build>
 		<plugins>
 			<plugin>
-				<artifactId> maven-compiler-plugin</artifactId>
+				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
 					<source>${jdk-version}</source>
@@ -33,4 +37,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
