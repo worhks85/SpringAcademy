@@ -9,22 +9,16 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:annotation-config/>
-	
+
+	<bean class="config.JavaSubConf"/>
+	<!-- Java설정 파일을 빈으로 등록하면 Import됨 -->
+
 	<bean id="memberDao" class="spring.MemberDao">
 	</bean>
 	
-	<bean id="memberRegSvc" class="spring.MemberRegisterService">
-	</bean>
-	
-	<bean id="printer1" class="spring.MemberPrinter">
-		<qualifier value="p1"/>
-	</bean>
-	
-	<bean id="printer2" class="spring.MemberPrinter">
-		<qualifier value="p2"/>
-	</bean>
-	
 	<bean id="infoPrinter" class="spring.MemberInfoPrinter">
+		<property name="memberDao" ref="memberDao"/>
+		<property name="printer" ref="printer"/>
 	</bean>
 	
 </beans>

@@ -11,7 +11,9 @@ import spring.RegisterRequest;
 public class MainTwoConfs {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext ctx = 
-				new AnnotationConfigApplicationContext(ConfigPart1.class , ConfigPart2.class);
+				new AnnotationConfigApplicationContext(
+						ConfigPart1.class, ConfigPart2.class);
+		
 		
 		MemberRegisterService mrs = 
 				ctx.getBean("memberRegSvc", 

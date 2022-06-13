@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 //멤버를 등록하는 기능만(SRP:단일 책임 원칙)
 public class MemberRegisterService {
-	@Autowired
+
+	//@Autowired
 	private MemberDao memberDao;
-	
+
+	//@Autowired (자바설정일 경우 생성자에는 자동주입을 지정할 수 없음)
 	public MemberRegisterService(MemberDao memberDao) {
 		System.out.println("MemberRegisterService(MemberDao)");
 		this.memberDao = memberDao; //의존 주입(DI)

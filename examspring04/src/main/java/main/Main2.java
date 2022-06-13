@@ -1,6 +1,7 @@
 package main;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import config.JavaConfig2;
 import spring.MemberInfoPrinter;
 import spring.MemberRegisterService;
@@ -9,7 +10,8 @@ import spring.RegisterRequest;
 public class Main2 {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext ctx = 
-				new AnnotationConfigApplicationContext(JavaConfig2.class);
+				new AnnotationConfigApplicationContext(
+						JavaConfig2.class);
 		
 		MemberRegisterService mrs = 
 				ctx.getBean("memberRegSvc", 

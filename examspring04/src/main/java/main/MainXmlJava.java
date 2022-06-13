@@ -1,17 +1,17 @@
 package main;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import config.JavaConfig;
+import config.JavaMainConf;
 import spring.MemberInfoPrinter;
 import spring.MemberRegisterService;
 import spring.RegisterRequest;
 
-public class Main {
+public class MainXmlJava {
 	public static void main(String[] args) {
-		AnnotationConfigApplicationContext ctx = 
-				new AnnotationConfigApplicationContext(
-						JavaConfig.class);
+		ClassPathXmlApplicationContext ctx = 
+				new ClassPathXmlApplicationContext("main-conf.xml");
 		
 		MemberRegisterService mrs = 
 				ctx.getBean("memberRegSvc", 

@@ -10,7 +10,7 @@ public class Member {
 	private LocalDateTime registerDate; //Date, Calendar 사용 X
 	
 	public Member(String email, String password, String name) {
-		super();
+		super();	
 		this.email = email;
 		this.password = password;
 		this.name = name;
