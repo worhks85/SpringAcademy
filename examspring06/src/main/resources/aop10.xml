@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<aop:aspectj-autoproxy />
+	<!-- 프록시 생성 -->
+
+	<bean id="programmer" class="aop10.Programmer"></bean>
+	<bean id="progamer" class="aop10.Progamer"></bean>
+	<bean id="workAspect" class="aop10.WorkAspect" />
+
+	<aop:config>
+		<aop:pointcut expression="execution(* usingComputer(..))"
+			id="commonPointcut" />
+
+		<aop:aspect ref="workAspect">
+			<aop:around method="workingAdvice"
+				pointcut-ref="commonPointcut" />
+		</aop:aspect>
+	</aop:config>
+
+
+</beans>
