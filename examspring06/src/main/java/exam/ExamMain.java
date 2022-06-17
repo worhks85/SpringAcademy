@@ -13,9 +13,12 @@ public class ExamMain {
 
 	long ret1 = repe.factorial(4);
 	long ret2 = recu.factorial(4);
-	System.out.println();
+	
+	
 	System.out.println(ret1);
 	System.out.println(ret2);
+	System.out.println(repe.factorial(4));
+	System.out.println(recu.factorial(4));
 	
 	}
 }
