@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass"	value = "oracle.jdbc.OracleDriver"/>
+		<property name = "jdbcUrl" 		value ="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name = "user"			value ="C##springuser"/>
+		<property name = "password"		value = "1234"/>
+		<!-- Pool 관련 설정 -->
+		<property name="maxPoolSize" value ="10"/>
+		<property name="maxIdleTime" value ="500"/>
+		<property name="idleConnectionTestPeriod" value = "300"/>
+	</bean>
+	<bean id ="memberDao" class= "spring.MemberDao">
+		<constructor-arg ref ="dataSource"/>
+	</bean>
+
+
+</beans>
