@@ -19,17 +19,14 @@ public class MemberDao {
 	public MemberDao(DataSource dataSource) {
 		System.out.println("MemberDao()");
 		jdbcTemplate = new JdbcTemplate(dataSource);
+		
 	}
 	//멤버 검색
 	public Member selectByEmail(String email) {
 		String sql = "SELECT * FROM MEMBER WHERE EMAIL=?";
 		//List<Member> result = jdbcTemplate.query(sql, new MemberRowMapper(), email);
 		//return result.isEmpty() ? null : result.get(0);
-		try {
-			return jdbcTemplate.queryForObject(sql, new MemberRowMapper(), email);	
-		} catch (Exception e) {
-			return null;
-		}
+		return jdbcTemplate.queryForObject(sql, new MemberRowMapper(), email);
 	}
 	
 	public int count() {
@@ -119,7 +116,6 @@ public class MemberDao {
 				pstmt.setString(1, member.getEmail());
 				pstmt.setString(2, member.getPassword());
 				pstmt.setString(3, member.getName());
-				
 				return pstmt;
 			}
 			

@@ -1,6 +1,8 @@
 package spring;
 
 import java.util.List;
+import java.util.Random;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
@@ -33,5 +35,14 @@ public class Main {
 		System.out.println("가입된 멤버 정보:" + newMember);
 		//System.out.println(memberDao.selectByEmail(newMember.getEmail()));
 		//키 홀더를 이용하면 자동 생성된 키 값을 insert만으로 얻어 올 수 있음
+		
+		
 	}
 }
+
+
+
+
+
+
+

@@ -28,7 +28,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"/>
 		
 		
-		<property name="user" value="C##springuser"/>
+		<property name="user" value="springuser"/>
 		<property name="password" value="1234"/>
 		
 		<!-- Pool 관련 설정 -->
