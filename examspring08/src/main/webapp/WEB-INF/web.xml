@@ -18,6 +18,7 @@
   	<servlet-name>appServlet</servlet-name>
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
+  
   <!-- 스프링 인코딩 필터 -->
   <filter>
   	<filter-name>encodingFilter</filter-name>
@@ -32,9 +33,7 @@
   	<filter-name>encodingFilter</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
-  
-  <!--  / 와 /*의 차이점 -->
-  
+  <!-- /와 /* 의 차이점~? -->
 </web-app>
 
 

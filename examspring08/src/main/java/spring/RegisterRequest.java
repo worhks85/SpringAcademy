@@ -7,6 +7,10 @@ public class RegisterRequest {
 	private String confirmPassword;
 	private String name;
 	
+	public RegisterRequest() {
+		System.out.println("RegisterRequest():" + this.hashCode());
+	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -40,7 +44,6 @@ public class RegisterRequest {
 		return "RegisterRequest [email=" + email + ", password=" + password + ", confirmPassword=" + confirmPassword
 				+ ", name=" + name + "]";
 	}
-	
 	
 }
 

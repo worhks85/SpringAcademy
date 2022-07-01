@@ -1,7 +1,13 @@
 package spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 //멤버를 등록하는 기능만(SRP:단일 책임 원칙)
 public class MemberRegisterService {
+
+	@Autowired
 	private MemberDao memberDao;
 	
 	public MemberRegisterService(MemberDao memberDao) {

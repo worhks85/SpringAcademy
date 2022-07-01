@@ -63,6 +63,11 @@ public class Member {
 		}
 		this.password = newPwd;
 	}
+	
+	//비밀번호 확인
+	public boolean matchPassword(String pwd) {
+		return this.password.equals(pwd);
+	}
 
 	@Override
 	public String toString() {

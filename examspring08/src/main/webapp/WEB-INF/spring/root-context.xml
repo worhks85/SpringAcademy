@@ -28,7 +28,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"/>
 		 -->		
 		
-		<property name="user" value="c##springuser"/>
+		<property name="user" value="springuser"/>
 		<property name="password" value="1234"/>
 		
 		<!-- Pool 관련 설정 -->
@@ -43,13 +43,14 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
-	<bean id="memberDao" class="spring.MemberDao">
+	<!-- <bean id="memberDao" class="spring.MemberDao">
 		<constructor-arg ref="dataSource"/>
 	</bean>
 	
 	<bean id="memberRegSvc" class="spring.MemberRegisterService">
 		<constructor-arg ref="memberDao"/>
 	</bean>
+	
 	<bean id="changePwdSvc" class="spring.ChangePasswordService">
 		<constructor-arg ref="memberDao"/>	
 	</bean> 
@@ -57,8 +58,29 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<bean class="controller.HelloController"></bean>
 	
 	<bean class="controller.RegisterController">
-		<property name="memberRegisterService" ref ="memberRegSvc" />
+		<property name="memberRegisterService" ref="memberRegSvc"/>
 	</bean>
+	
+	<bean class="controller.MainController"></bean>
+	
+	<bean id="authService" class="spring.AuthService">
+		<property name="memberDao" ref="memberDao"/>
+	</bean>
+	
+	<bean class="controller.LoginController">
+		<property name="authService" ref="authService"/>
+	</bean>
+	
+	<bean class="controller.LogoutController"></bean> -->
+	
+	<!-- 
+		지정된 패키지 및 하위 패키지를 스캔하여 
+		@Component어노테이션이 붙은 클래스를 모두 빈으로 등록함 
+		주의(자동 주입 확인)
+	-->
+	<context:component-scan base-package="controller"/>
+	<context:component-scan base-package="spring"/>
+	
 </beans>
 
 

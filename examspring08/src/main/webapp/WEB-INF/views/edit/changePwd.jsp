@@ -6,10 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title><spring:message code="member.register"/></title>
+<title><spring:message code="change.pwd.title"/></title>
 </head>
 <body>
-	<p><spring:message code="register.done" arguments="${formData.name}"/></p>
-	<p><a href="<c:url value='/main'/>"><spring:message code="go.main"/></a></p>
+<spring:message code="change.pwd.done"/> <br>
+<a href="<c:url value='/main'/>"><spring:message code="go.main"/></a>
+
 </body>
 </html>

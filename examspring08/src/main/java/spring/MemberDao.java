@@ -11,7 +11,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class MemberDao {
 	
 	private JdbcTemplate jdbcTemplate;
@@ -26,7 +28,7 @@ public class MemberDao {
 		String sql = "SELECT * FROM MEMBER WHERE EMAIL=?";
 		List<Member> result = jdbcTemplate.query(sql, new MemberRowMapper(), email);
 		return result.isEmpty() ? null : result.get(0);
-//		return jdbcTemplate.queryForObject(sql, new MemberRowMapper(), email);
+		//return jdbcTemplate.queryForObject(sql, new MemberRowMapper(), email);
 	}
 	
 	public int count() {
